@@ -1,0 +1,496 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf8">
+  <title>Chris Devereux</title>
+
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7COpen+Sans" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/FortAwesome/Font-Awesome/307323a6a7fe69b7018cb49d2b7e43e1f4b6c92b/css/font-awesome.min.css" />
+  
+  <style>
+    /** Document-wide **/
+    
+    body {
+      background-color: brown;
+      font-family: "Montserrat", sans-serif;
+      color: white;
+      font-size: 12pt;
+    }
+    
+    @media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+      body {
+        font-size: 8pt;
+      }
+    }
+    
+    @media only print {
+      body {
+        background-color: white;
+        color: black;
+      }
+    }
+    
+    a {
+      color: white;
+      text-decoration: none;
+    }
+    
+    @media only print {
+      a {
+        color: black;
+      }
+    }
+    
+    a:hover {
+      text-decoration: underline;
+    }
+    
+    p a {
+      text-decoration: underline;
+    }
+    
+    @media only print {
+      a {
+        text-decoration: none;
+      }
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+    }
+    
+    h1 {
+      text-transform: uppercase;
+      font-size: 2em;
+    }
+    
+    h2 {
+      font-size: 2em;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    @media only print {
+      h2 {
+        color: black;
+      }
+    }
+    
+    h1, h2, h3, #skills h4, .dates h4, h5 {
+      text-shadow: 2px 2px rgba(0,0,0,0.15);
+    }
+    
+    @media only print {
+      h1, h2, h3, #skills h4, .dates h4, h5 {
+        text-shadow: none;
+      }
+    }
+    
+    .skill-tags {
+      list-style: none;
+      text-align: right;
+      margin-top: 1.5em;
+      page-break-before: avoid;
+    }
+    
+    .skill-tags > li {
+      display: inline-block;
+      color: brown;
+      background-color: white;
+      padding: 0.125em 0.25em;
+      margin-top: 0.5em;
+    }
+    
+    @media only print {
+      .skill-tags > li {
+        color: rgb(50, 50, 50);
+      }
+    }
+    
+    p {
+      font-family: "Open Sans", sans-serif;
+    }
+    
+    p, header, li, h1, h2, h3, h4, h5, h6 {
+      page-break-inside: avoid;
+    }
+    
+    header, h1, h2, h3, h4, h5, h6, .highlights {
+      page-break-after: avoid;
+    }
+    
+    
+    /** Main Layout **/
+    
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    
+    #main-header, main {
+      margin-top: 8em;
+      width: 100%;
+      max-width: 50em;
+    }
+    
+    @media only print {
+      #main-header, main {
+        margin-top: 3em;
+      } 
+    }
+    
+    #contact-details {
+      margin-top: 1em;
+    }
+    
+    .contact-link {
+      display: block;
+    }
+    
+    .contact-icon {
+      display: inline-block;
+      font-size: 2em;
+      margin: 0.5em 0.125em;
+    }
+    
+    #main-header {
+      text-align: center;
+    }
+    
+    main > section {
+      margin-bottom: 5em;
+      margin-left: 1em;
+      margin-right: 2em;
+      /*border: 1px solid rgba(255, 255, 255, 0.2);*/
+    }
+    
+    section p,
+    .history-section section {
+      margin-left: 2em;
+    }
+    
+    .history-section > section {
+      margin-top: 5em;
+    }
+    
+    .history-section > section > header {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    .history-section > section:first-of-type {
+      margin-top: 2em;
+    }
+    
+    .history-section > section > header {
+      margin-bottom: 2em;
+    }
+    
+    header > .dates {
+      flex: 1;
+    }
+    
+    header > .titles {
+      flex: 2;
+      text-align: right;
+    }
+    
+    header > .titles > * {
+      margin-top: 0.25em;
+    }
+    
+    header > .titles > *:first-child {
+      margin-top: 0em;
+    }
+    
+    .history-section h5 {
+      margin-top: 2em;
+    }
+    
+    .short-bullets li {
+      margin-top: 1;
+      font-family: "Open Sans", sans-serif;
+    }
+    
+    .short-bullets li:first-child {
+      margin-top: 0;
+    }
+    
+    .highlights {
+      font-family: "Open Sans", sans-serif;
+    }
+    
+    .highlights li {
+      margin-top: 1em;
+    }
+    
+    .highlights li:first-child {
+      margin-top: 0;
+    }
+    
+    
+    /** Section layouts **/
+    
+    
+    #overview {
+      
+    }
+    
+    #skills {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      
+      margin-left: 1.5em;
+    }
+    
+    #skills > header {
+      width: 100%;
+      padding-left: -1.5em;
+    }
+    
+    #skills > section {
+      flex: 1;
+      margin-top: 3em;
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+    }
+    
+    #skills h4 > i {
+      margin-right: 0.5em;
+    }
+  </style>
+</head>
+
+<body>
+  <header id='main-header'>
+    <h1>Chris Devereux</h1>
+    <h2>Software Developer</h2>
+
+    <div id='contact-details'>
+      <a class='contact-link' href='mailto:cdevereux@me.com'>cdevereux@me.com</a>
+      <a class='contact-icon' href='https://github.com/chrisdevereux'><i class='fa fa-github-square'></i></a>
+      <a class='contact-icon' href='http://stackoverflow.com/users/422211/chris-devereux'><i class='fa fa-stack-overflow'></i></a>
+    </div>
+  </header>
+  
+  <main>
+    <section id='skills'>
+      <header>
+        <h3>Technical Skills:</h2>
+      </header>
+      <section>
+        <h4><i class="fa fa-code"></i>Programming Languages</h4>
+        <ul class='skill-list'>
+          <li>Objective-C</li>
+          <li>C++</li>
+          <li>Javascript</li>
+          <li>VBA</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h4><i class="fa fa-html5"></i>Front-End Tools & Frameworks</h4>
+        <ul class='skill-list'>
+          <li>Webpack</li>
+          <li>Babel</li>
+          <li>CSS</li>
+          <li>Less</li>
+          <li>React</li>
+          <li>Cocoa (OS X / iOS)</li>
+        </ul>
+      </section>
+    </section>
+    
+    <section class='history-section' id='employment'>
+      <h3>Career History:</h3>
+      
+      <section>
+        <header>
+          <div class='dates'>
+            <h4>2014-2016</h4>
+          </div>
+          <div class='titles'>
+            <h4>National Institute for Health Research</h4>
+            <h4>CRN South London Information Manager</h4>
+          </div>
+        </header>
+        
+        <p>
+          Responsible for developing & maintaining sytems to monitor recruitment activity 
+          and financial data on clinical research trials in South London, providing 
+          Business Intelligence and performance reports to research managers and academics. 
+        </p>
+        <p>
+          The organisation relied on a large number of internally developed MSAccess/VBA applications,
+          many of which were poorly documented and had accumulated technical debt as requirements changed.
+        </p>
+        
+        <h5>Highlights:</h5>
+        <ul class='highlights'>
+           <li>
+             Restored functionality to legacy systems that had stopped functioning after staff changes. 
+             Improved and documented these systems, adding unit and data quality tests.
+           </li>
+           <li>
+             Worked with research delivery managers to develop a system allowing managers to 
+             target prospective research sites for new studies based on past research topics
+             and recruitment performance.
+           </li>
+           <li>
+             Developed interactive web-based data visualisations using modern JavaScript techniques (
+              <a href='http://babeljs.io'>Babel</a>,
+              <a href='http://webpack.github.io'>Webpack</a>,
+              <a href=''>npm</a>
+             ) and <a href='http://reactjs.com'>React.js</a>.
+           </li>
+        </ul>
+        
+        <ul class='skill-tags'>
+          <li>Access</li>
+          <li>Database Administration</li>
+          <li>VBA</li>
+          <li>Javascript</li>
+          <li>CSS</li>
+          <li>Less</li>
+          <li>React.JS</li>
+        </ul>
+      </section>
+      
+      <section>
+        <header>
+          <div class='dates'>
+            <h4>2012-2014</h4>
+          </div>
+          <div class='titles'>
+            <h4>Self-Employed</h4>
+            <h4>iOS Tools Developer</h4>
+          </div>
+        </header>
+        
+        <p>
+          Developed a third-party replacement for Apple's
+          <a href='https://developer.apple.com/xcode/interface-builder/'>Interface Builder</a>
+          tool, allowing developers and designers to create iOS interfaces using a vector
+          graphics editor.
+        </p>
+        <p>
+          This improved over Interface Builder by allowing fuller access to the graphics
+          & animation capabilities of iOS (Core Animation, Core Graphics, etc.) and also 
+          allowing designers to connect to a running instance of their App and view design
+          changes in realtime.
+        </p>
+        <p>
+          In 2014, Apple substantially updgraded Interface Builder.
+          As a result of this, and feedback from beta testers about their willingness
+          to depend on a third-party tool, I decided to abandon the project. 
+        </p>
+        
+        <ul class='skill-tags'>
+          <li>Cocoa</li>
+          <li>iOS</li>
+          <li>Objective-C</li>
+        </ul>
+      </section>
+      
+      <section>
+        <header>
+          <div class='dates'>
+            <h4>2010-2012</h4>
+          </div>
+          <div class='titles'>
+            <h4>Content Developer</h4>
+            <h4>Inspired Gaming</h4>
+          </div>
+        </header>
+        
+        <p>
+          Game developer, responsible for working closely with game designers and graphic artists
+          to produce casual and betting games for UK and international markets. 
+        </p>
+        <p>
+           Responsible for development of new games, maintenance and updates to existing games
+           and porting existing games to new regions and hardware. As the lead developer on a project,
+           I was also responsible for coordinating QA and designers, communicating with product owners
+           and ensuring timely delivery.
+        </p>
+        <p>
+           Games were developed for Windows, using a proprietary internal C++ framework.
+           Varying hardware specifications meant that I gained experience in performance profiling
+           and writing efficient code.
+        </p>
+        
+        <h5>Highlights:</h5>
+        <ul class='highlights'>
+          <li>Developed the client library for a multiplayer jackpot system.</li>
+          <li>Developed a testing harness that simplified automated testing of new games.</li>
+          <li>Assisted in the development and testing of a new internal game framework.</li>
+          <li>Met with gaming regulatiors as the company's main technical representative for code reviews.</li>
+        </ul>
+        
+        <ul class='skill-tags'>
+          <li>C++</li>
+          <li>Windows</li>
+          <li>Game Development</li>
+        </ul>
+      </section>
+    </section>
+    
+    <section class='history-section' id='education'>
+      <h3>Education</h3>
+      
+      <section>
+        <header>
+          <div class='dates'>
+            <h4>2007-2009</h4>
+          </div>
+          <div class='titles'>
+            <h4>University of Birmingham</h4>
+            <h4>MPhil Philosophy (P/T)</h4>
+          </div>
+        </header>
+        
+        <p>
+          Specialized in Philosophy of Logic &amp; Language, focusing on
+          <a href='http://plato.stanford.edu/entries/meaning-holism/'>semantic holism</a> in
+          <a href='http://plato.stanford.edu/entries/content-causal/'>causal</a> and
+          <a href='https://en.wikipedia.org/wiki/Inferential_role_semantics'>inferential-role</a>
+          semantic theories. 
+        </p>
+        <p>
+          I also attended related lectures and seminars in Psychology and Computer Science,
+          including machine learning and cognitive neuroscience.  
+        </p>
+      </section>
+      
+      <section>
+        <header>
+          <div class='dates'>
+            <h4>2003-2006</h4>
+          </div>
+          <div class='titles'>
+            <h4>University of Birmingham</h4>
+            <h4>BA Philosophy (2:1 Hons)</h4>
+          </div>
+        </header>
+      </section>
+      
+      <section>
+        <h4>Self-Study</h4>
+        
+        <ul class='short-bullets'>
+          <li>Coursera/Princeton: Introduction to Data Structures & Algorithms (Parts 1 & 2)</li>
+          <li>MIT Open Courseware: Structure & Interpretation of Computer Programs</li>
+        </ul>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
